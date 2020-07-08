@@ -1,3 +1,4 @@
 # Poker-River-Call-Analysis
 
-README
+## Resources
+https://github.com/matt57225/bovada-hand-history-converter
