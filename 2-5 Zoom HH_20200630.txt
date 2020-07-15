@@ -2435,44 +2435,6 @@ Seat 3: Small Blind folded
 
 
 
-PokerStars Hand #3963155147:  Hold'em No Limit ($2.50/$5) - 2020/06/19 14:18:30 ET
-Table 'Zone Poker ID 1612' 9-max Seat #2 is the button
-Seat 1: Big Blind ($306.85 in chips) 
-Seat 2: Hero ($492.50 in chips) 
-Seat 3: Small Blind ($1532.55 in chips) 
-Small Blind: posts small blind $2.50
-Big Blind: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [Ks 9s]
-Hero: raises $7.50 to $12.50
-Small Blind: calls $10
-Big Blind: calls $7.50
-*** FLOP *** [9d Td 6s]
-Small Blind: checks 
-Big Blind: checks 
-Hero: checks 
-*** TURN *** [9d Td 6s] [Qs]
-Small Blind: checks 
-Big Blind: checks 
-Hero: checks 
-*** RIVER *** [9d Td 6s Qs] [Qd]
-Small Blind: bets $17.82
-Big Blind: calls $17.82
-Hero: folds 
-*** SHOW DOWN ***
-Small Blind: shows [Kh Jd] (a hand...)
-Big Blind: shows [9h Jc] (a hand...)
-Hero: shows [Ks 9s] (a hand...)
-Small Blind collected $71.14 from pot
-*** SUMMARY ***
-Total pot $73.14 | Rake $2.00
-Board [9d Td 6s Qs Qd]
-Seat 1: Big Blind showed [9h Jc] and lost with...
-Seat 2: Hero folded
-Seat 3: Small Blind showed [Kh Jd] and won ($71.14)
-
-
-
 PokerStars Hand #3963153702:  Hold'em No Limit ($2.50/$5) - 2020/06/19 14:13:55 ET
 Table 'Zone Poker ID 1612' 9-max Seat #4 is the button
 Seat 1: Small Blind ($495.00 in chips) 
@@ -14751,59 +14713,6 @@ Seat 5: Dealer folded
 Seat 6: Small Blind folded
 
 
-
-PokerStars Hand #3951641743:  Hold'em No Limit ($2.50/$5) - 2020/05/27 13:19:06 ET
-Table 'Zone Poker ID 1588' 9-max Seat #3 is the button
-Seat 1: UTG+1 ($500.00 in chips) 
-Seat 2: UTG+2 ($459.71 in chips) 
-Seat 3: Dealer ($609.63 in chips) 
-Seat 4: Hero ($912.77 in chips) 
-Seat 5: Big Blind ($956.63 in chips) 
-Seat 6: UTG ($1476.35 in chips) 
-Hero: posts small blind $2.50
-Big Blind: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [Ah 8s]
-UTG: folds 
-UTG+1: folds 
-UTG+2: calls $5
-Dealer: folds 
-Hero: calls $2.50
-Big Blind: checks 
-*** FLOP *** [Kh 6c 4h]
-Hero: checks 
-Big Blind: checks 
-UTG+2: checks 
-*** TURN *** [Kh 6c 4h] [Jc]
-Hero: checks 
-Big Blind: checks 
-UTG+2: checks 
-*** RIVER *** [Kh 6c 4h Jc] [9d]
-Hero: checks 
-Big Blind: bets $10
-UTG+2: folds 
-Hero: folds 
-*** SHOW DOWN ***
-Big Blind: shows [Tc 8d] (a hand...)
-Hero: shows [Ah 8s] (a hand...)
-Dealer: shows [4d Ts] (a hand...)
-UTG+2: shows [6h 5h] (a hand...)
-UTG: shows [5s Kd] (a hand...)
-UTG+1: shows [6d 2h] (a hand...)
-Uncalled bet ($10) returned to Big Blind
-Big Blind collected $14.25 from pot
-*** SUMMARY ***
-Total pot $15.00 | Rake $0.75
-Board [Kh 6c 4h Jc 9d]
-Seat 1: UTG+1 folded
-Seat 2: UTG+2 folded
-Seat 3: Dealer folded
-Seat 4: Hero folded
-Seat 5: Big Blind collected ($14.25)
-Seat 6: UTG folded
-
-
-
 PokerStars Hand #3951641167:  Hold'em No Limit ($2.50/$5) - 2020/05/27 13:17:20 ET
 Table 'Zone Poker ID 1588' 9-max Seat #6 is the button
 Seat 1: Small Blind ($528.75 in chips) 
@@ -17281,45 +17190,6 @@ Seat 4: Hero folded
 
 
 
-PokerStars Hand #3949325748:  Hold'em No Limit ($2.50/$5) - 2020/05/23 11:36:45 ET
-Table 'Zone Poker ID 1588' 9-max Seat #2 is the button
-Seat 1: Big Blind ($614.30 in chips) 
-Seat 2: Hero ($876.32 in chips) 
-Seat 3: Small Blind ($618.78 in chips) 
-Small Blind: posts small blind $2.50
-Big Blind: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [3s 4s]
-Hero: raises $7.50 to $12.50
-Small Blind: calls $10
-Big Blind: calls $7.50
-*** FLOP *** [Qs 2d 8d]
-Small Blind: checks 
-Big Blind: checks 
-Hero: checks 
-*** TURN *** [Qs 2d 8d] [Ts]
-Small Blind: bets $22
-Big Blind: calls $22
-Hero: calls $22
-*** RIVER *** [Qs 2d 8d Ts] [Jh]
-Small Blind: bets $85
-Big Blind: folds 
-Hero: folds 
-*** SHOW DOWN ***
-Small Blind: shows [3c 3h] (a hand...)
-Big Blind: shows [7c Qc] (a hand...)
-Hero: shows [3s 4s] (a hand...)
-Uncalled bet ($85.00) returned to Small Blind
-Small Blind collected $101.50 from pot
-*** SUMMARY ***
-Total pot $103.50 | Rake $2.00
-Board [Qs 2d 8d Ts Jh]
-Seat 1: Big Blind folded
-Seat 2: Hero folded
-Seat 3: Small Blind collected ($101.50)
-
-
-
 PokerStars Hand #3949103158:  Hold'em No Limit ($2.50/$5) - 2020/05/23 00:42:14 ET
 Table 'Zone Poker ID 1588' 9-max Seat #5 is the button
 Seat 1: Small Blind ($547.19 in chips) 
@@ -17752,49 +17622,6 @@ Seat 1: Small Blind folded
 Seat 2: Big Blind folded
 Seat 3: Hero folded
 Seat 4: Dealer collected ($124.32)
-
-
-
-PokerStars Hand #3949075892:  Hold'em No Limit ($2.50/$5) - 2020/05/23 00:01:37 ET
-Table 'Zone Poker ID 1588' 9-max Seat #3 is the button
-Seat 1: Hero ($600.69 in chips) 
-Seat 2: UTG ($525.00 in chips) 
-Seat 3: Dealer ($399.63 in chips) 
-Seat 4: Small Blind ($836.47 in chips) 
-Small Blind: posts small blind $2.50
-Hero: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [Td Js]
-UTG: folds 
-Dealer: raises $7.50 to $12.50
-Small Blind: calls $10
-Hero: calls $7.50
-*** FLOP *** [Jd 3s 2h]
-Small Blind: checks 
-Hero: checks 
-Dealer: checks 
-*** TURN *** [Jd 3s 2h] [Kd]
-Small Blind: checks 
-Hero: checks 
-Dealer: checks 
-*** RIVER *** [Jd 3s 2h Kd] [Kc]
-Small Blind: bets $12.82
-Hero: calls $12.82
-Dealer: folds 
-*** SHOW DOWN ***
-Small Blind: shows [Jh Ts] (a hand...)
-UTG: shows [4s 9c] (a hand...)
-Dealer: shows [9s 9d] (a hand...)
-Hero: shows [Td Js] (a hand...)
-Hero collected $30.07 from pot
-Small Blind collected $30.07 from pot
-*** SUMMARY ***
-Total pot $63.14 | Rake $3.00
-Board [Jd 3s 2h Kd Kc]
-Seat 1: Hero showed [Td Js] and won ($30.07)
-Seat 2: UTG folded
-Seat 3: Dealer folded
-Seat 4: Small Blind showed [Jh Ts] and won ($30.07)
 
 
 
@@ -18738,46 +18565,6 @@ Board [5d 5s 9s 8d Ac]
 Seat 1: Hero showed [9h 8h] and lost with...
 Seat 2: Dealer showed [8s As] and won ($172)
 Seat 3: Small Blind folded
-
-
-
-PokerStars Hand #3948208109:  Hold'em No Limit ($2.50/$5) - 2020/05/21 16:01:09 ET
-Table 'Zone Poker ID 1588' 9-max Seat #2 is the button
-Seat 1: Big Blind ($698.13 in chips) 
-Seat 2: Hero ($1148.16 in chips) 
-Seat 3: Small Blind ($310.50 in chips) 
-Small Blind: posts small blind $2.50
-Big Blind: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [Ah Jd]
-Hero: raises $7.50 to $12.50
-Small Blind: calls $10
-Big Blind: calls $7.50
-*** FLOP *** [6d Jc Qc]
-Small Blind: checks 
-Big Blind: checks 
-Hero: bets $12.50
-Small Blind: calls $12.50
-Big Blind: calls $12.50
-*** TURN *** [6d Jc Qc] [6s]
-Small Blind: checks 
-Big Blind: checks 
-Hero: checks 
-*** RIVER *** [6d Jc Qc 6s] [2d]
-Small Blind: bets $54.75
-Big Blind: folds 
-Hero: calls $54.75
-*** SHOW DOWN ***
-Small Blind: shows [Th 9h] (a hand...)
-Big Blind: shows [Js 2s] (a hand...)
-Hero: shows [Ah Jd] (a hand...)
-Hero collected $182.50 from pot
-*** SUMMARY ***
-Total pot $184.50 | Rake $2.00
-Board [6d Jc Qc 6s 2d]
-Seat 1: Big Blind folded
-Seat 2: Hero showed [Ah Jd] and won ($182.50)
-Seat 3: Small Blind showed [Th 9h] and lost with...
 
 
 
@@ -19812,59 +19599,6 @@ Seat 6: UTG+1 folded
 
 
 
-PokerStars Hand #3947716345:  Hold'em No Limit ($2.50/$5) - 2020/05/20 18:58:22 ET
-Table 'Zone Poker ID 1588' 9-max Seat #3 is the button
-Seat 1: UTG+1 ($596.08 in chips) 
-Seat 2: UTG+2 ($475.50 in chips) 
-Seat 3: Dealer ($686.58 in chips) 
-Seat 4: Small Blind ($1696.09 in chips) 
-Seat 5: Hero ($779.70 in chips) 
-Seat 6: UTG ($541.85 in chips) 
-Small Blind: posts small blind $2.50
-Hero: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [Qc Ks]
-UTG: calls $5
-UTG+1: folds 
-UTG+2: raises $12 to $17
-Dealer: folds 
-Small Blind: folds 
-Hero: calls $12
-UTG: calls $12
-*** FLOP *** [3h 7s 5s]
-Hero: checks 
-UTG: checks 
-UTG+2: checks 
-*** TURN *** [3h 7s 5s] [8c]
-Hero: checks 
-UTG: checks 
-UTG+2: checks 
-*** RIVER *** [3h 7s 5s 8c] [Jc]
-Hero: checks 
-UTG: bets $21
-UTG+2: folds 
-Hero: folds 
-*** SHOW DOWN ***
-Small Blind: shows [8s Th] (a hand...)
-Hero: shows [Qc Ks] (a hand...)
-Dealer: shows [9s 7d] (a hand...)
-UTG+2: shows [4d 4s] (a hand...)
-UTG: shows [Qh Kh] (a hand...)
-UTG+1: shows [Ad 7c] (a hand...)
-Uncalled bet ($21) returned to UTG
-UTG collected $50.83 from pot
-*** SUMMARY ***
-Total pot $53.50 | Rake $2.67
-Board [3h 7s 5s 8c Jc]
-Seat 1: UTG+1 folded
-Seat 2: UTG+2 folded
-Seat 3: Dealer folded
-Seat 4: Small Blind folded
-Seat 5: Hero folded
-Seat 6: UTG collected ($50.83)
-
-
-
 PokerStars Hand #3947710314:  Hold'em No Limit ($2.50/$5) - 2020/05/20 18:47:01 ET
 Table 'Zone Poker ID 1588' 9-max Seat #6 is the button
 Seat 1: Small Blind ($500.00 in chips) 
@@ -20012,57 +19746,6 @@ Seat 3: Small Blind folded
 Seat 4: Big Blind showed [Kd 2d] and won ($444.48)
 Seat 5: UTG folded
 Seat 6: UTG+1 folded
-
-
-
-PokerStars Hand #3947704707:  Hold'em No Limit ($2.50/$5) - 2020/05/20 18:36:44 ET
-Table 'Zone Poker ID 1588' 9-max Seat #6 is the button
-Seat 1: Small Blind ($1232.87 in chips) 
-Seat 2: Hero ($716.54 in chips) 
-Seat 3: UTG ($163.26 in chips) 
-Seat 4: UTG+1 ($841.20 in chips) 
-Seat 5: UTG+2 ($1187.54 in chips) 
-Seat 6: Dealer ($511.32 in chips) 
-Small Blind: posts small blind $2.50
-Hero: posts big blind $5
-*** HOLE CARDS ***
-Dealt to Hero [Ad 3d]
-UTG: calls $5
-UTG+1: folds 
-UTG+2: folds 
-Dealer: folds 
-Small Blind: calls $2.50
-Hero: checks 
-*** FLOP *** [4s 7c 5s]
-Small Blind: checks 
-Hero: checks 
-UTG: checks 
-*** TURN *** [4s 7c 5s] [Td]
-Small Blind: checks 
-Hero: checks 
-UTG: checks 
-*** RIVER *** [4s 7c 5s Td] [3c]
-Small Blind: bets $10.69
-Hero: folds 
-UTG: folds 
-*** SHOW DOWN ***
-Small Blind: shows [Js 9h] (a hand...)
-Hero: shows [Ad 3d] (a hand...)
-UTG+2: shows [7h Ks] (a hand...)
-Dealer: shows [Th 5d] (a hand...)
-UTG: shows [Qh Jc] (a hand...)
-UTG+1: shows [6d 5h] (a hand...)
-Uncalled bet ($10.69) returned to Small Blind
-Small Blind collected $14.25 from pot
-*** SUMMARY ***
-Total pot $15.00 | Rake $0.75
-Board [4s 7c 5s Td 3c]
-Seat 1: Small Blind collected ($14.25)
-Seat 2: Hero folded
-Seat 3: UTG folded
-Seat 4: UTG+1 folded
-Seat 5: UTG+2 folded
-Seat 6: Dealer folded
 
 
 
