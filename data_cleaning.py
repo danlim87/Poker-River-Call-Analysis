@@ -45,20 +45,19 @@ for idx, street in enumerate(streets):
     df2[street] = df2['raw_hh'].apply(lambda x: x.split('***')[idx*2])
 
 
-#Fold y/n 
-df2['fold y/n'] = df2['River'].apply(lambda x: 1 if 'Hero: folds' in x else 0)
+#Fold_y/n 
+df2['fold_y/n'] = df2['River'].apply(lambda x: 1 if 'Hero: folds' in x else 0)
 
 
-#Obtaining villain position (is there a better way to write this?)
+#Obtaining villain position (is there a better way to write this?) FOR PURPOSES OF HH
 positions = ['UTG+2', 'UTG+1', 'UTG', 'Dealer', 'Big Blind', 'Small Blind']
+actual_positions = ['UTG', 'HJ', 'CO']
 def obtain_villain_position(hh_river):
     for position in positions:
         if position in hh_river:
             return position
-df2['villain_position'] = df2['River'].apply(lambda x: obtain_villain_position(x))
 
-
-#Obtain Hero position
+#Obtain hero position - NEED TO COME BACK AND MAKE THIS BETTER.
 def obtain_hero_position(hh_stackinfo):
     seat_counter = hh_stackinfo.count('Seat') - 1
     temp_positions = positions[-seat_counter:]
@@ -68,7 +67,29 @@ def obtain_hero_position(hh_stackinfo):
                 return position
         elif position not in hh_stackinfo:
             return position
-df2['hero_position'] = df2['Stack_info'].apply(lambda x: obtain_hero_position(x))
+
+#NEED TO COME BACK AND MAKE THIS BETTER        
+def obtain_actual_position(position, hh_stackinfo):
+    seat_counter = hh_stackinfo.count('Seat') - 1
+    if position == 'UTG+2':
+        return 'CO'
+    elif position == 'UTG+1':
+        if seat_counter == 6:
+            return 'HJ'
+        elif seat_counter == 5:
+            return 'CO'
+    elif position == 'UTG':
+        if seat_counter == 6:
+            return 'UTG'
+        elif seat_counter == 5:
+            return 'HJ'
+        elif seat_counter == 4:
+            return 'CO'
+    else:
+        return position
+
+df2['villain_position'] = df2.apply(lambda x: obtain_actual_position(obtain_villain_position(x['River']), x['Stack_info']), axis=1)
+df2['hero_position'] = df2.apply(lambda x: obtain_actual_position(obtain_hero_position(x['Stack_info']), x['Stack_info']), axis=1)
 
 
 #Hero OOP
@@ -83,13 +104,20 @@ df2['all_in_y/n'] = df2['River'].apply(lambda x: 1 if 'all-in' in x else 0)
 df2['raised_y/n'] = df2['River'].apply(lambda x: 1 if 'raises' in x else 0)
 
 
-#3b pot - count how many time "raises" appears
-df2['3b_pot_y/n'] = df2['Preflop'].apply(lambda x: 1 if x.count('raises')==2 else 0)
+#Villain 3b
+df2['villain_3b_pot_y/n'] = df2['Preflop'].apply(lambda x: 1 if x.count('raises')==2 and 'Hero: calls' in x else 0)
+
+
+#Villain 4b
+df2['villain_4b_pot_y/n'] = df2['Preflop'].apply(lambda x: 1 if x.count('raises')==3 and 'Hero: calls' in x else 0)
+
+
+#I 3b pot - count how many time "raises" appears
+df2['hero_3b_pot_y/n'] = df2.apply(lambda x: 1 if x['Preflop'].count('raises')==2 and x['villain_3b_pot_y/n'] == 0 else 0, axis=1)
 
 
 #4b pot
-df2['4b_pot_y/n'] = df2['Preflop'].apply(lambda x: 1 if x.count('raises')==3 else 0)
-
+df2['hero_4b_pot_y/n'] = df2.apply(lambda x: 1 if x['Preflop'].count('raises')==3 and x['villain_4b_pot_y/n']==0 else 0, axis=1)
 
 #River percentage calculator
 def calculate_player_chips_vested(hh):
@@ -144,10 +172,10 @@ def river_bet_size_calculator(hh):
         if river_agg > eff_river_stacks:
             river_agg = eff_river_stacks
     #I call
-    if hh['fold y/n'] == 0:
+    if hh['fold_y/n'] == 0:
         return round(river_agg / (final_pot - river_agg * 2) * 100, 1)
     #I fold
-    elif hh['fold y/n'] == 1:
+    elif hh['fold_y/n'] == 1:
         return round(river_agg / final_pot * 100, 1)
 
 df2['river_bet_size_percentage'] = df2.apply(lambda x: river_bet_size_calculator(x), axis=1)
@@ -157,6 +185,9 @@ df2['river_bet_predefined_y/n'] = df2.apply(lambda x: 1 if x['river_bet_size_per
 
 #River bet itself is increments of 5
 df2['river_bet_int_y/n'] = df2.apply(lambda x: 1 if river_bet_raise(x['River']) % 5 == 0 else 0, axis=1)
+
+#River bet is an overbet (defined by any bet greater than pot > 100)
+df2['overbet_y/n'] = df2.apply(lambda x: 1 if x['river_bet_size_percentage'] > 100 else 0, axis = 1)
 
 #Should've folded y/n
 def hero_hole_cards(hh_preflop):
@@ -172,7 +203,6 @@ def villain_hole_cards(hh_showdown, hh_river):
     hole_cards.append(Card.new(hh_showdown.split(obtain_villain_position(hh_river) + ': shows ')[1].split()[0][1:]))
     hole_cards.append(Card.new(hh_showdown.split(obtain_villain_position(hh_river) + ': shows ')[1].split()[1][:-1]))
     return hole_cards
-
 
 def community_board(hh_summary):
     board = []
@@ -190,13 +220,8 @@ def should_call(hh):
         return 1
     else:
         return 0
-   
+
 df2['should_call'] = df2.apply(lambda x: should_call(x), axis=1)
-
-
-Card.int_to_str(hero_hole_cards(df2.iloc[0]['Preflop'])[0])
-
-
 
 def villain_bluffing(hh):
     #An attempt to figure out whether my opponent was bluffing or not.  This is more of a nuanced approach
@@ -206,4 +231,6 @@ def villain_bluffing(hh):
         Bluff freq. increases if there is 4 to a straight or 4 to a flush out on the board (unless he makes a flush with his hand)
         If there is two pair on the board and he bets his "two pair" could be for value (if it's ace high')
         Anytime the board equals his hand = bluff?
-        If no flush or straight possible on board, and he bets > pair probably for value.  
+        If no flush or straight possible on board, and he bets > pair probably for value.'''
+
+df2.to_csv('$2$5Zoom_HH_Parsed.csv', index=False)
