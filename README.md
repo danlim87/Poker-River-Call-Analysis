@@ -8,7 +8,7 @@ Results: TBD
 
 **Why:** The player pool at Ignition poker is anonymous where players' screennames are concealed, and everyone's holecards are revealed after a 24 hour period.  This allows for analysis of whether or not hero(denoting the player in question) should've called or folded (aka our target variable). Analyzing this data captures some of the player pool's tendencies in what could be summarized as the "current meta-game of poker."
 
-**Application:** Essentially, poker is a business(risk and capital), where decision making is critical.  What I'm doing with this analysis is going through the process of leveraging my data (parallel: a company's data) to gain insights on how I could optimize my performance (parallel: improve KPI for a company).  This is why this dataset **not only focuses on the analysis itself, but more importantly how we use these insights to apply it to my business (poker game).**
+**Application:** Essentially, poker is a business(risk and capital), where decision making is critical.  What I'm doing with this analysis is going through the process of leveraging my data (parallel: a business's data) to gain insights on how I could optimize my performance (parallel: improve KPI for a business).  This is why this dataset **not only focuses on the analysis itself, but more importantly how we use these insights to apply it to my business (poker game).**
 
 *Note: Forking this repository will require you to provide your own hand histories, as I didn't want to have my own hand histories posted for the entire internet to see.  This will work with any PokerStars HH txt file or converting the Bovada or Ignition Poker hand history to a PokerStars HH via matt57225's excellent converter listed underneath Resources below. 
 
