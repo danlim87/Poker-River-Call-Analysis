@@ -4,7 +4,7 @@ Results: TBD
 
 **Goal:** Use a data-driven approach to optimize one's river calling efficiency in the game of 6-max Texas Hold-em (aka know when to hold'em and when to fold'em.) 
 
-**Objective:** Analyze 541 instances of $2.5/$5 Zoom on Ignition poker where I was faced with river aggression between May 2020 - June 2020. Hand Histories were initially filtered from my own database via PokerTracker4.  
+**Objective:** Analyze 541 instances of $2.5/$5 Zoom on Ignition poker where I was faced with river aggression between May 2020 - June 2020. 
 
 **Why:** The player pool at Ignition poker is anonymous where players' screennames are concealed, and everyone's holecards are revealed after a 24 hour period.  This allows for analysis of whether or not hero(denoting the player in question) should've called or folded (aka our target variable). Analyzing this data captures some of the player pool's tendencies in what could be summarized as the "current meta-game of poker."
 
@@ -27,6 +27,9 @@ Future Questions/Projects:
 Lessons learned/pain points:
 - Feature engineering and its difficulties. Luckily was able to scour the internet and found the "treys" library that made my life a lot easier. 
 - Formulating the problem and its potential pain points and then moving forward will prove to be beneficial in the future. 
+
+Misc.:
+- Hand Histories were initially filtered from my own database via PokerTracker4.  
 
 ## Resources
 https://github.com/matt57225/bovada-hand-history-converter
