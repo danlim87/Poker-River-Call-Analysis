@@ -10,7 +10,7 @@ Results: TBD
 
 **Application:** Essentially, poker is a business(risk and capital), where decision making is critical.  What I'm doing with this analysis is going through the process of leveraging my data (parallel: a business's data) to gain insights on how I could optimize my performance (parallel: improve KPI for a business).  This is why this dataset **not only focuses on the analysis itself, but more importantly how we use these insights to apply it to my business (poker game).**
 
-*Note: Forking this repository will require you to provide your own hand histories, as I didn't want to have my own hand histories posted for the entire internet to see.  This will work with any PokerStars HH txt file or converting the Bovada or Ignition Poker hand history to a PokerStars HH via matt57225's excellent converter listed underneath Resources below. 
+*Note: Forking this repository will require you to provide your own hand histories, as I didn't want to have my own hand histories posted for the entire internet to see.  This will work with any PokerStars HH txt file or converting the Bovada or Ignition Poker hand history to a PokerStars HH via matt57225's excellent converter listed underneath Resources below.* 
 
 **Skillsets demonstrated:** 
 - Feature engineering: data_cleaning.py goes into extensive detail on how I filtered out relevant features just from a raw(unparsed) hand history and python code.
