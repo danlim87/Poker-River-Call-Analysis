@@ -16,6 +16,7 @@ import re
 from treys import Card
 from treys import Evaluator
 
+#Reading raw hh file as dataframe
 #https://stackoverflow.com/questions/59369684/pandas-read-files-with-blank-line-as-separator
 def per_section(it, is_delimiter=lambda x: x.isspace()):
     ret = []
@@ -29,24 +30,20 @@ def per_section(it, is_delimiter=lambda x: x.isspace()):
     if ret:
         yield ''.join(ret)
 
-with open("2-5 NL HH_20200630.txt") as f:
-    s = list(per_section(f))
-    df = pd.DataFrame({'raw_hh':s})
-
 with open("2-5 Zoom HH_20200630.txt") as f:
     s = list(per_section(f))
-    df2 = pd.DataFrame({'raw_hh':s})
+    df = pd.DataFrame({'raw_hh':s})
   
 
 #FEATURE ENGINEERING
 #Divide streets and create separate columns
 streets = ['Stack_info', 'Preflop', 'Flop', 'Turn', 'River', 'Showdown', 'Summary']
 for idx, street in enumerate(streets):
-    df2[street] = df2['raw_hh'].apply(lambda x: x.split('***')[idx*2])
+    df[street] = df['raw_hh'].apply(lambda x: x.split('***')[idx*2])
 
 
 #Fold_y/n 
-df2['fold_y/n'] = df2['River'].apply(lambda x: 1 if 'Hero: folds' in x else 0)
+df['fold_y/n'] = df['River'].apply(lambda x: 1 if 'Hero: folds' in x else 0)
 
 
 #Obtaining villain position (is there a better way to write this?) FOR PURPOSES OF HH
@@ -88,36 +85,36 @@ def obtain_actual_position(position, hh_stackinfo):
     else:
         return position
 
-df2['villain_position'] = df2.apply(lambda x: obtain_actual_position(obtain_villain_position(x['River']), x['Stack_info']), axis=1)
-df2['hero_position'] = df2.apply(lambda x: obtain_actual_position(obtain_hero_position(x['Stack_info']), x['Stack_info']), axis=1)
+df['villain_position'] = df.apply(lambda x: obtain_actual_position(obtain_villain_position(x['River']), x['Stack_info']), axis=1)
+df['hero_position'] = df.apply(lambda x: obtain_actual_position(obtain_hero_position(x['Stack_info']), x['Stack_info']), axis=1)
 
 
 #Hero OOP
-df2['hero_OOP'] = df2['River'].apply(lambda x: 1 if x.split(']')[2].startswith(' Hero') else 0)
+df['hero_OOP'] = df['River'].apply(lambda x: 1 if x.split(']')[2].startswith(' Hero') else 0)
 
     
 #If river bet or raise is all in y/n
-df2['all_in_y/n'] = df2['River'].apply(lambda x: 1 if 'all-in' in x else 0)
+df['all_in_y/n'] = df['River'].apply(lambda x: 1 if 'all-in' in x else 0)
 
 
 #Opponent raised river bet
-df2['raised_y/n'] = df2['River'].apply(lambda x: 1 if 'raises' in x else 0)
+df['raised_y/n'] = df['River'].apply(lambda x: 1 if 'raises' in x else 0)
 
 
 #Villain 3b
-df2['villain_3b_pot_y/n'] = df2['Preflop'].apply(lambda x: 1 if x.count('raises')==2 and 'Hero: calls' in x else 0)
+df['villain_3b_pot_y/n'] = df['Preflop'].apply(lambda x: 1 if x.count('raises')==2 and 'Hero: calls' in x else 0)
 
 
 #Villain 4b
-df2['villain_4b_pot_y/n'] = df2['Preflop'].apply(lambda x: 1 if x.count('raises')==3 and 'Hero: calls' in x else 0)
+df['villain_4b_pot_y/n'] = df['Preflop'].apply(lambda x: 1 if x.count('raises')==3 and 'Hero: calls' in x else 0)
 
 
 #I 3b pot - count how many time "raises" appears
-df2['hero_3b_pot_y/n'] = df2.apply(lambda x: 1 if x['Preflop'].count('raises')==2 and x['villain_3b_pot_y/n'] == 0 else 0, axis=1)
+df['hero_3b_pot_y/n'] = df.apply(lambda x: 1 if x['Preflop'].count('raises')==2 and x['villain_3b_pot_y/n'] == 0 else 0, axis=1)
 
 
 #4b pot
-df2['hero_4b_pot_y/n'] = df2.apply(lambda x: 1 if x['Preflop'].count('raises')==3 and x['villain_4b_pot_y/n']==0 else 0, axis=1)
+df['hero_4b_pot_y/n'] = df.apply(lambda x: 1 if x['Preflop'].count('raises')==3 and x['villain_4b_pot_y/n']==0 else 0, axis=1)
 
 #River percentage calculator
 def calculate_player_chips_vested(hh):
@@ -178,16 +175,16 @@ def river_bet_size_calculator(hh):
     elif hh['fold_y/n'] == 1:
         return round(river_agg / final_pot * 100, 1)
 
-df2['river_bet_size_percentage'] = df2.apply(lambda x: river_bet_size_calculator(x), axis=1)
+df['river_bet_size_percentage'] = df.apply(lambda x: river_bet_size_calculator(x), axis=1)
 
 #River bet% is predefined (25, 50, 75, 100, 125, etc.)
-df2['river_bet_predefined_y/n'] = df2.apply(lambda x: 1 if x['river_bet_size_percentage'] in [50, 75, 100] else 0, axis =1)
+df['river_bet_predefined_y/n'] = df.apply(lambda x: 1 if x['river_bet_size_percentage'] in [50, 75, 100] else 0, axis =1)
 
 #River bet itself is increments of 5
-df2['river_bet_int_y/n'] = df2.apply(lambda x: 1 if river_bet_raise(x['River']) % 5 == 0 else 0, axis=1)
+df['river_bet_int_y/n'] = df.apply(lambda x: 1 if river_bet_raise(x['River']) % 5 == 0 else 0, axis=1)
 
 #River bet is an overbet (defined by any bet greater than pot > 100)
-df2['overbet_y/n'] = df2.apply(lambda x: 1 if x['river_bet_size_percentage'] > 100 else 0, axis = 1)
+df['overbet_y/n'] = df.apply(lambda x: 1 if x['river_bet_size_percentage'] > 100 else 0, axis = 1)
 
 #Should've folded y/n
 def hero_hole_cards(hh_preflop):
@@ -221,7 +218,7 @@ def should_call(hh):
     else:
         return 0
 
-df2['should_call'] = df2.apply(lambda x: should_call(x), axis=1)
+df['should_call'] = df.apply(lambda x: should_call(x), axis=1)
 
 def villain_bluffing(hh):
     #An attempt to figure out whether my opponent was bluffing or not.  This is more of a nuanced approach
@@ -233,4 +230,4 @@ def villain_bluffing(hh):
         Anytime the board equals his hand = bluff?
         If no flush or straight possible on board, and he bets > pair probably for value.'''
 
-df2.to_csv('$2$5Zoom_HH_Parsed.csv', index=False)
+df.to_csv('$2$5Zoom_HH_Parsed.csv', index=False)
